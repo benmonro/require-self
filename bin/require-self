@@ -11,7 +11,7 @@ var name = pkg.name;
 // Compute the location and content for the pseudo-module.
 var modulePath = path.join(cwd, 'node_modules', name + '.js');
 var pathToModule = name.indexOf('/') ? '../..' : '../';
-var moduleText = "module.exports = require(' + pathToModule +');";
+var moduleText = "module.exports = require('" + pathToModule + "');";
 
 // Create the pseudo-module.
 fs.writeFileSync(modulePath, moduleText);
